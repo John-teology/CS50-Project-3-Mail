@@ -75,9 +75,6 @@ function load_mailbox(mailbox) {
     .then((response) => response.json())
     .then((data) => {
       data.forEach((email) => {
-        // if (mailbox === 'inbox'){
-
-        // }
         const view = document.createElement("div");
         view.className = email.read ? "read_view" : "nread_view";
         emailbiew.append(view);
@@ -127,12 +124,21 @@ function load_email(id) {
           reply_email(data.sender, data.subject.replace("Re: ", ""))
         );
       document.querySelector("#arch").addEventListener("click", () => {
-        fetch("/emails/" + data.id, {
-          method: "PUT",
-          body: JSON.stringify({
-            archived: true,
-          }),
-        }).then((response) => load_mailbox("archive"));
+        if (!data.archived) {
+          fetch("/emails/" + data.id, {
+            method: "PUT",
+            body: JSON.stringify({
+              archived: true,
+            }),
+          }).then((response) => load_mailbox("archive"));
+        } else {
+          fetch("/emails/" + data.id, {
+            method: "PUT",
+            body: JSON.stringify({
+              archived: false,
+            }),
+          }).then((response) => load_mailbox("archive"));
+        }
       });
     });
 }
