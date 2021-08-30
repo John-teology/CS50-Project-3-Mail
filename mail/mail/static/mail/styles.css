@@ -1,0 +1,40 @@
+textarea {
+  min-height: 400px;
+}
+
+.nread_view {
+  background-color: #b8b8b8;
+  padding: 5px;
+  margin: 10px;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.sender {
+  padding-right: 50px;
+}
+
+.timestamp {
+  float: right;
+}
+
+.read_view {
+  background-color: #fefcfc;
+  padding: 5px;
+  margin: 10px;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.recipient {
+  font-size: 10px;
+}
+
+#arch {
+  font-size: 10px;
+  float: right;
+}
