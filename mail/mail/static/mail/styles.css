@@ -4,12 +4,14 @@ textarea {
 
 .nread_view {
   background-color: #b8b8b8;
+  background-color: #fefcfc;
+
   padding: 5px;
   margin: 10px;
-  border-width: 2px;
+  border-width: 1px;
   border-color: black;
   border-style: solid;
-  border-radius: 10px;
+  font-weight: bold;
 }
 
 .sender {
@@ -24,10 +26,9 @@ textarea {
   background-color: #fefcfc;
   padding: 5px;
   margin: 10px;
-  border-width: 2px;
+  border-width: 1px;
   border-color: black;
   border-style: solid;
-  border-radius: 10px;
 }
 
 .recipient {

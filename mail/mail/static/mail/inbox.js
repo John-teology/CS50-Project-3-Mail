@@ -81,7 +81,7 @@ function load_mailbox(mailbox) {
         const recipient = document.createElement("div");
         recipient.className = "recipient";
         recipient.innerHTML = `
-        <span class = "sender"><b>${email.recipients[0]}</b></span>
+        <span class = "sender">${email.recipients[0]}</span>
         <span class = "subject">${email.subject}</span> <span class = "timestamp">${email.timestamp}</span>
         `;
         view.append(recipient);
