@@ -34,7 +34,7 @@ def compose(request):
     emails = [email.strip() for email in data.get("recipients").split(",")]
     if emails == [""]:
         return JsonResponse({
-            "error": "At least one recipient required."
+            "error": "At least one recipient required.",
         }, status=400)
 
     # Convert email addresses to users
@@ -62,7 +62,7 @@ def compose(request):
             sender=request.user,
             subject=subject,
             body=body,
-            read=user == request.user
+            read= user == request.user
         )
         email.save()
         for recipient in recipients:
